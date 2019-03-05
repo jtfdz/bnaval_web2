@@ -3,6 +3,17 @@
     text-align: center;
 }
 
+#fire1{
+text-align: left;
+position: absolute;
+margin-top: -50px;
+}
+
+#fire2{
+text-align: right;
+margin-top: -310px;
+}
+
 .matches {
   list-style-type: none;
   width: 30em;
@@ -52,7 +63,16 @@
 .bstart{ 
    background-color: black;
    color: white;
-   padding: 10px;
+   padding: 5px;
+   font-size: 20px;
+   border-radius: 10px;
+}
+
+.connected{ 
+position: relative;
+right: -20px;
+text-align: right;
+top: -30px;
 }
 
 

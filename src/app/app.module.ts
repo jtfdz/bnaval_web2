@@ -10,6 +10,10 @@ import { BoardComponent } from './board/board.component';
 import { EnemyBoardComponent } from './enemy-board/enemy-board.component';
 import { OwnBoardComponent } from './own-board/own-board.component';
 
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
+ 
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { OwnBoardComponent } from './own-board/own-board.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SocketIoModule.forRoot(config),
     FormsModule
   ],
   providers: [],

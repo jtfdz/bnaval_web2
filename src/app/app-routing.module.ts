@@ -9,7 +9,6 @@ const routes: Routes = [
   {path: 'battle/:id/:name', component: BattleComponent}
 ];
 
-
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]

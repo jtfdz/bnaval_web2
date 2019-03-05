@@ -4,6 +4,9 @@ import { MATCHROOMS } from '../match-rooms';
 import { MatchService } from '../match.service';
 import {Router} from '@angular/router';
 
+import { Socket } from "ngx-socket-io";
+import { Observable } from "rxjs";
+
 @Component({
   selector: 'app-lobby',
   templateUrl: './lobby.component.html',
@@ -15,9 +18,13 @@ export class LobbyComponent implements OnInit {
     matches: Match[];
     show : Boolean = false;
 
-ngOnInit() {
-this.getMatch();
-}
+    usersConn: number;
+
+
+    ngOnInit() {
+    this.getMatch();
+
+    }
 
 constructor(private matchService: MatchService, private router: Router) {
     this.name = '';
@@ -33,8 +40,8 @@ onSelect(match: Match): void {
   this.show = true;
 }
 
-showMatches() : Boolean {
-  if(this.name === ''){  this.show = false; return false;}
+showMatches(match: Match) : Boolean {
+  if(this.name === ''){  this.show = false; this.selectedMatch=match; return false;}
   else{return true;}
 }
 

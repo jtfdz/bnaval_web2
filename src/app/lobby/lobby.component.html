@@ -1,23 +1,26 @@
 
 <div id="username">
 <label>
-  Nombre:
-  <input type="text" [(ngModel)]="name" placeholder="Aquí" >
+  Name:
+  <input type="text" [(ngModel)]="name" placeholder=" Write it here!" >
 </label>
 </div>
 
 <div *ngIf="showMatches()">
+<div id="fire1"><img src="https://i.pinimg.com/originals/f8/83/cd/f883cd3dc5b2be7b90095aa87141de4e.gif"></div>
 <ul class="matches">
   <li *ngFor="let match of matches" (click)="onSelect(match)" [class.selected]="match === selectedMatch">
-    <span class="badge">{{match.id}}</span> {{match.name}}
+      <span class="badge">{{match.id}}</span> {{match.name}} <div class="connected">/2</div>
   </li>
 </ul>
+<div id="fire2"><img src="https://i.pinimg.com/originals/f8/83/cd/f883cd3dc5b2be7b90095aa87141de4e.gif"></div>
 </div>
     
 <div *ngIf="show">
 <div class="bstartd">  
-<button class="bstart" routerLink="/battle/{{selectedMatch.id}}/{{name}}">COMENZAR</button>    
+<button class="bstart" routerLink="/battle/{{selectedMatch.id}}/{{name}}">𝕾𝖙𝖆𝖗𝖙</button>    
 </div>  
+
 
 
 

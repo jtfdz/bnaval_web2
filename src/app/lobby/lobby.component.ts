@@ -34,7 +34,7 @@ onSelect(match: Match): void {
 }
 
 showMatches() : Boolean {
-  if(this.name === ''){  this.show = false; this.selectedMatch !=Match; return false;}
+  if(this.name === ''){  this.show = false; return false;}
   else{return true;}
 }
 

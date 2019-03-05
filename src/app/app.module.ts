@@ -6,13 +6,19 @@ import { BattleComponent } from './battle/battle.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BoardComponent } from './board/board.component';
+import { EnemyBoardComponent } from './enemy-board/enemy-board.component';
+import { OwnBoardComponent } from './own-board/own-board.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LobbyComponent,
-    BattleComponent
+    BattleComponent,
+    BoardComponent,
+    EnemyBoardComponent,
+    OwnBoardComponent
   ],
   imports: [
     BrowserModule,

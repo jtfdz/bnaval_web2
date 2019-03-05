@@ -1,10 +1,17 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LobbyComponent }      from './lobby/lobby.component';
+import { BattleComponent }      from './battle/battle.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/lobby', pathMatch: 'full' },
+  { path: 'lobby', component: LobbyComponent },
+  {path: 'battle/:id/:name', component: BattleComponent}
+];
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

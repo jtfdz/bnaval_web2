@@ -1,0 +1,23 @@
+
+<div id="username">
+<label>
+  Nombre:
+  <input type="text" [(ngModel)]="name" placeholder="Aquí" >
+</label>
+</div>
+
+<div *ngIf="showMatches()">
+<ul class="matches">
+  <li *ngFor="let match of matches" (click)="onSelect(match)" [class.selected]="match === selectedMatch">
+    <span class="badge">{{match.id}}</span> {{match.name}}
+  </li>
+</ul>
+</div>
+    
+<div *ngIf="show">
+<div class="bstartd">  
+<button class="bstart" routerLink="/battle/{{selectedMatch.id}}/{{name}}">COMENZAR</button>    
+</div>  
+
+
+

@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnemyBoardComponent implements OnInit {
 
-  constructor() { }
+  colcount = 10;
+  columnArray: number[];
+
+  constructor() {
+    this.columnArray = Array(this.colcount).fill(0).map((x, i) => i);
+  }
 
   ngOnInit() {
   }

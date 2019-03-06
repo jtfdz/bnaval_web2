@@ -11,8 +11,9 @@ import { EnemyBoardComponent } from './enemy-board/enemy-board.component';
 import { OwnBoardComponent } from './own-board/own-board.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { CellComponent } from './cell/cell.component';
 
-const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
  
 
 @NgModule({
@@ -22,7 +23,8 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
     BattleComponent,
     BoardComponent,
     EnemyBoardComponent,
-    OwnBoardComponent
+    OwnBoardComponent,
+    CellComponent
   ],
   imports: [
     BrowserModule,

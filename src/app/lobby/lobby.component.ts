@@ -1,10 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { Match } from '../match';
-import { MatchService } from '../match.service';
 import {Router} from '@angular/router';
 
 import { Socket } from "ngx-socket-io";
 import { Observable } from "rxjs";
+import { RoomService } from '../room.service';
+import { Room } from '../room';
 
 @Component({
   selector: 'app-lobby',
@@ -13,36 +13,39 @@ import { Observable } from "rxjs";
 })
 export class LobbyComponent implements OnInit {
     name: String = '';
-    selectedMatch: Match;
-    matches: Match[];
+    selectedMatch: Room;
+    matchObserv;
+    matches: Room[];
     show : Boolean = false;
 
     usersConn: number;
 
 
     ngOnInit() {
-    this.getMatch();
-
+      this.getMatch();
+      this.socket.emit('lobby');
     }
 
-constructor(private matchService: MatchService, private router: Router) {
+constructor(private roomService:RoomService, private router: Router, private socket:Socket) {
     this.name = '';
  }
 
 getMatch(): void {
-  this.matches = this.matchService.getMatches()
+  this.matchObserv = this.roomService.getMatches().subscribe((data) =>{
+    this.matches = data;
+  })
 }
 
 navigate(){
   this.router.navigate(["/battle", this.selectedMatch.id, this.name])
 }
 
-onSelect(match: Match): void {
+onSelect(match: Room): void {
   this.selectedMatch = match;
   this.show = true;
 }
 
-showMatches(match: Match) : Boolean {
+showMatches(match: Room) : Boolean {
   if(this.name === ''){  this.show = false; this.selectedMatch=match; return false;}
   else{return true;}
 }

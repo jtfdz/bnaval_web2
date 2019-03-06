@@ -18,4 +18,8 @@ export class CellComponent implements OnInit {
     this.fullCoord = this.xCoord + this.yCoord;
   }
 
+  onAttack(): void{
+    console.log("clicked: ", this.fullCoord);
+  }
+
 }

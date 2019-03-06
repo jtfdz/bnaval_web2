@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Match } from '../match';
-import { MATCHROOMS } from '../match-rooms';
 import { MatchService } from '../match.service';
 import {Router} from '@angular/router';
 
@@ -31,8 +30,11 @@ constructor(private matchService: MatchService, private router: Router) {
  }
 
 getMatch(): void {
-  this.matchService.getMatches()
-      .subscribe(matches => this.matches = matches);
+  this.matches = this.matchService.getMatches()
+}
+
+navigate(){
+  this.router.navigate(["/battle", this.selectedMatch.id, this.name])
 }
 
 onSelect(match: Match): void {

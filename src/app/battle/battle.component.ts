@@ -2,9 +2,7 @@ import { Component, OnInit, Injectable, NgModule } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
 import { Socket } from "ngx-socket-io";
-import { MatchService } from '../match.service';
-import { BrowserGetTestability } from '@angular/platform-browser/src/browser/testability';
-import { TestBedViewEngine } from '@angular/core/testing/src/test_bed';
+
 
 
 @Component({
@@ -21,8 +19,7 @@ export class BattleComponent implements OnInit {
   room;
     
 
-  constructor(private route: ActivatedRoute, private socket: Socket,
-    private matchService: MatchService) {
+  constructor(private route: ActivatedRoute, private socket: Socket) {
 
     this.userObsv = this.getUsers().subscribe(data => {
       console.log(data);
@@ -36,9 +33,7 @@ export class BattleComponent implements OnInit {
         console.log(`${user} joined`);
       }
       
-      if(this.users.length == 2){
-        this.begin();
-      }
+      
 
     });
     
@@ -51,7 +46,8 @@ export class BattleComponent implements OnInit {
       this.socket.connect();
       this.socket.emit("open-room", {
         name: this.name,
-        room: this.room
+        room: this.room,
+        ships: []
       });
     });
   }

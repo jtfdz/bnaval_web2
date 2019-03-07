@@ -12,10 +12,10 @@ export class RoomService {
 
   constructor(private socket:Socket) { }
 
-  getMatches(): Observable<Room[]>{
+  getMatches(){
     return new Observable((observer)=>{
-      this.socket.on('in-lobby', (rooms) =>{
-        observer.next(rooms);
+      this.socket.on('in-lobby', (data) =>{
+        observer.next(data.rooms);
       });
     })
   }

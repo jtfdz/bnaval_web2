@@ -17,13 +17,14 @@ export class LobbyComponent implements OnInit {
     matchObserv;
     matches: Room[];
     show : Boolean = false;
-
+    classes = {};
     usersConn: number;
 
 
     ngOnInit() {
       this.getMatch();
       this.socket.emit('lobby');
+      
     }
 
 constructor(private roomService:RoomService, private router: Router, private socket:Socket) {
@@ -32,7 +33,8 @@ constructor(private roomService:RoomService, private router: Router, private soc
 
 getMatch(): void {
   this.matchObserv = this.roomService.getMatches().subscribe((data) =>{
-    this.matches = data;
+    console.log(data);
+    this.matches = data as Room[]; 
   })
 }
 

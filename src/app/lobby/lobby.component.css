@@ -43,6 +43,11 @@ margin-top: -310px;
   position: relative;
   top: -3px;
 }
+
+.hidden {
+  display: hidden;
+}
+
 .matches .badge {
   display: inline-block;
   font-size: small;

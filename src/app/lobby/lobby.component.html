@@ -7,13 +7,15 @@
 </div>
 
 <div *ngIf="showMatches()">
-<div id="fire1"><img src="https://i.pinimg.com/originals/f8/83/cd/f883cd3dc5b2be7b90095aa87141de4e.gif"></div>
+
 <ul class="matches">
-  <li *ngFor="let match of matches" (click)="onSelect(match)" [class.selected]="match === selectedMatch">
-      <span class="badge">{{match.id}}</span> {{match.name}} <div class="connected">/2</div>
+  <li *ngFor="let match of matches"  (click)="onSelect(match)" [class.selected]="match === selectedMatch">  
+    <div *ngIf="match.users.length < 2">
+        <span class="badge">{{match.id}}</span> {{match.name}} <div class="connected">{{match.users.length}}/2</div>
+      </div>
   </li>
 </ul>
-<div id="fire2"><img src="https://i.pinimg.com/originals/f8/83/cd/f883cd3dc5b2be7b90095aa87141de4e.gif"></div>
+
 </div>
     
 <div *ngIf="show">

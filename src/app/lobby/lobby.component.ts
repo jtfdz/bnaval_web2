@@ -24,7 +24,6 @@ export class LobbyComponent implements OnInit {
     ngOnInit() {
       this.getMatch();
       this.socket.emit('lobby');
-      
     }
 
 constructor(private roomService:RoomService, private router: Router, private socket:Socket) {
@@ -33,7 +32,6 @@ constructor(private roomService:RoomService, private router: Router, private soc
 
 getMatch(): void {
   this.matchObserv = this.roomService.getMatches().subscribe((data) =>{
-    console.log(data);
     this.matches = data as Room[]; 
   })
 }
@@ -41,7 +39,7 @@ getMatch(): void {
 navigate(){
   this.router.navigate(["/battle", this.selectedMatch.id, this.name])
 }
-
+ 
 onSelect(match: Room): void {
   this.selectedMatch = match;
   this.show = true;

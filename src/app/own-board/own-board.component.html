@@ -1,61 +1,111 @@
 <div>
-  <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="A" [yCoord]="n"></app-cell>
+    
+  <div>      
+    <div *ngFor="let n of columnArray" class="cellcontainer water">
+      <div *ngIf="statusA[n] === 0">
+      <app-cell xCoord="A" [yCoord]="n" [status]="statusA[n]"></app-cell>
+     </div>
+    <div class="cellcontainer ship" *ngIf="statusA[n] === 1">
+      <app-cell xCoord="A" [yCoord]="n" [status]="statusA[n]"></app-cell>
     </div>
+    </div>
+  <div> 
+
+  <div>
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusB[n] === 0">
+      <app-cell xCoord="B" [yCoord]="n" [status]="statusB[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusB[n] === 1">
+      <app-cell xCoord="B" [yCoord]="n" [status]="statusB[n]"></app-cell>
+    </div>  
+    </div>  
   </div>
 
   <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="B" [yCoord]="n"></app-cell>
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusC[n] === 0">
+      <app-cell xCoord="C" [yCoord]="n" [status]="statusC[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusC[n] === 1">
+      <app-cell xCoord="C" [yCoord]="n" [status]="statusC[n]"></app-cell>
+    </div>  
     </div>  
   </div>
     
   <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="C" [yCoord]="n"></app-cell>
-    </div> 
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusD[n] === 0">
+      <app-cell xCoord="D" [yCoord]="n" [status]="statusD[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusD[n] === 1">
+      <app-cell xCoord="D" [yCoord]="n" [status]="statusD[n]"></app-cell>
+    </div>  
+    </div>  
+  </div>
+
+    <div>
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusE[n] === 0">
+      <app-cell xCoord="E" [yCoord]="n" [status]="statusE[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusE[n] === 1">
+      <app-cell xCoord="E" [yCoord]="n" [status]="statusE[n]"></app-cell>
+    </div>  
+    </div>  
   </div>
 
   <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="D" [yCoord]="n"></app-cell>
-    </div> 
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusF[n] === 0">
+      <app-cell xCoord="F" [yCoord]="n" [status]="statusF[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusF[n] === 1">
+      <app-cell xCoord="F" [yCoord]="n" [status]="statusF[n]"></app-cell>
+    </div>  
+    </div>  
   </div>
 
-  <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="E" [yCoord]="n"></app-cell>
-    </div>
+    <div>
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusG[n] === 0">
+      <app-cell xCoord="G" [yCoord]="n" [status]="statusG[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusG[n] === 1">
+      <app-cell xCoord="G" [yCoord]="n" [status]="statusG[n]"></app-cell>
+    </div>  
+    </div>  
   </div>
 
-  <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="F" [yCoord]="n"></app-cell>
-    </div>
+    <div>
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusH[n] === 0">
+      <app-cell xCoord="H" [yCoord]="n" [status]="statusH[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusH[n] === 1">
+      <app-cell xCoord="H" [yCoord]="n" [status]="statusH[n]"></app-cell>
+    </div>  
+    </div>  
   </div>
 
-  <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="G" [yCoord]="n"></app-cell>
-    </div>
+    <div>
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusI[n] === 0">
+      <app-cell xCoord="I" [yCoord]="n" [status]="statusI[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusI[n] === 1">
+      <app-cell xCoord="I" [yCoord]="n" [status]="statusI[n]"></app-cell>
+    </div>  
+    </div>  
   </div>
 
-  <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="H" [yCoord]="n"></app-cell>
-    </div>
+    <div>
+    <div class="cellcontainer water" *ngFor="let n of columnArray">
+      <div *ngIf="statusJ[n] === 0">
+      <app-cell xCoord="J" [yCoord]="n" [status]="statusJ[n]"></app-cell>
+       </div>  
+      <div class="cellcontainer ship" *ngIf="statusJ[n] === 1">
+      <app-cell xCoord="J" [yCoord]="n" [status]="statusJ[n]"></app-cell>
+    </div>  
+    </div>  
   </div>
-
-  <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="I" [yCoord]="n"></app-cell>
-    </div>
-  </div>
-
-  <div>
-    <div class="cellcontainer own" *ngFor="let n of columnArray">
-      <app-cell xCoord="J" [yCoord]="n"></app-cell>
-    </div>
-  </div>
-</div>

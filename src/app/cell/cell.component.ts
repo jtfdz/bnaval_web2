@@ -9,6 +9,7 @@ export class CellComponent implements OnInit {
 
   @Input() xCoord: string;
   @Input() yCoord: number;
+  @Input() status: number;
 
   fullCoord = "";
 
@@ -18,8 +19,11 @@ export class CellComponent implements OnInit {
     this.fullCoord = this.xCoord + this.yCoord;
   }
 
+  
+
+
   onAttack(): void{
-    console.log("clicked: ", this.fullCoord);
+    console.log("clicked: ", this.fullCoord, this.status);
   }
 
 }

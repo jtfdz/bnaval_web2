@@ -37,14 +37,23 @@ export class OwnBoardComponent implements OnInit {
     let user = data["user"];
     let event = data["event"];
     let ships = data["ships"];
-    let counter = data["counter"];
+    let inv = data["inv"];
+    
     console.log(event, user, ":", ships);
 
     if(this.name == user){
 
+    let x;
+    if(inv)
+    {x=1;}
+    else{
+    if(!inv)
+    {x=0;}
+    }
+
     let  statusHelper = [];
     for(var i=0;i<10;i++){
-    ships[counter - 1][i].forEach(function(element){
+    ships[x][i].forEach(function(element){
     statusHelper.push(element.status);
     });
     this.statusZ = statusHelper;

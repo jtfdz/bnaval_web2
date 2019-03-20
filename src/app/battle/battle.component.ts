@@ -14,6 +14,8 @@ export class BattleComponent implements OnInit {
   userObsv;
   users = [];
 
+  turnsObsv;
+
   name;
   room;
  
@@ -51,6 +53,10 @@ export class BattleComponent implements OnInit {
       }, x);
     });
 
+     this.turnsObsv = this.getUsers().subscribe(data => {
+      
+    });
+
   }
 
   ngOnInit() {
@@ -69,11 +75,21 @@ export class BattleComponent implements OnInit {
 
   ngOnDestroy(){
     this.userObsv.unsubscribe();
+    this.turnsObsv.unsubscribe();
   }
 
   getUsers() {
     let observable = new Observable(observer => {
       this.socket.on("in-game", data => {
+        observer.next(data);
+      });
+    });
+    return observable;
+  }
+
+  getTurns() {
+    let observable = new Observable(observer => {
+      this.socket.on("turns", data => {
         observer.next(data);
       });
     });

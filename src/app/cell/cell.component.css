@@ -6,6 +6,7 @@ div {
     opacity: 0.65;
 }
 
+
 :host-context(.water) div{
     background-color: aqua;
 }
@@ -13,5 +14,21 @@ div {
 :host-context(.ship) div{
     background-color: black;
     border-radius: 10px;
+    width: 38px;
+    height: 38px;
+}
+
+:host-context(.touchedShip) div{
+    background-color: yellow;
+    border-radius: 20px;
+    width: 38px;
+    height: 38px;
+}
+
+:host-context(.touchedWater) div{
+    background-color: yellow;
+    border-radius: 20px;
+    width: 38px;
+    height: 38px;
 }
 
